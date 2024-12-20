@@ -102,7 +102,7 @@ ZotMeta = {
                     status = await Book.updateMetadata(item);
                 } else if (item.itemTypeID === Zotero.ItemTypes.getID('journalArticle')) {
                     status = await Journal.updateMetadata(item);
-                } else if (item.itemTypeID === Zotero.ItemTypes.getID('preprint')) {
+                } else if (item.itemTypeID === Zotero.ItemTypes.getID('preprint') && item.repository == 'arXiv') {
                     status = await Arxiv.updateMetadata(item);
                 } else {
                     status = 1;

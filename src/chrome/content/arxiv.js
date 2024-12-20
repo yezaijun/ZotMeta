@@ -23,11 +23,6 @@ Arxiv = {
     },
 
     getMetaData(item) {
-        var repository = item.getField('repository');
-        if (repository !== "arXiv") {
-            return null; // 仅处理 ArXiv 上的文献
-        }
-
         var arxivID = item.getField('archiveID').split(":")[1];
         if (!arxivID) {
             return null; // ArXiv ID 是必需的
